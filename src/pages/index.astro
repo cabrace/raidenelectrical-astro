@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-/* import Card from '../components/Card.astro'; */
 ---
 
 <Layout title="Welcome to Astro.">
@@ -715,7 +714,7 @@ import Layout from '../layouts/Layout.astro';
 
     <!-- Java Script
     ================================================== -->
-    <script client:load src="/js/jquery-3.2.1.min.js"></script>
+    <script is:inline src="/js/jquery-3.2.1.min.js"></script>
     <script client:load src="/js/plugins.js"></script>
     <script client:load src="/js/main.js"></script>
 
