@@ -59,6 +59,35 @@
  * # base style overrides
  *
  * ------------------------------------------------------------------- */
+
+:root {
+    /* --font-serif: 'Inter', sans-serif; */
+    /* --font-16: 1.6rem; */
+    /* --font-18: 1.8rem; */
+    /* --font-24: 2.4rem; */
+    /* --font-32: 3.2rem; */
+    /* --font-80: 8rem; */
+    /* --spacing-4: 0.4rem; */
+    /* --spacing-8: 0.5rem; */
+    /* --spacing-16: 1.6rem; */
+    /* --spacing-20: 2rem; */
+    /* --spacing-24: 2.4rem; */
+    /* --spacing-32: 3.2rem; */
+    --color-brand: hsl(204 88% 53%);
+    --color-text-primary: hsl(0 0% 98%);
+    --color-text-muted: hsl(210 34% 80%);
+    --color-bg-primary: hsl(210 34% 13%);
+    --color-bg-secondary: hsl(209, 35%, 15%);
+    --color-btn-primary-active: var(--color-brand);
+    --color-btn-primary-active-hover: hsl(204 88% 60%);
+    --color-btn-primary-inactive: hsl(205 70% 33%);
+    --color-btn-secondary: hsl(192 19% 95%);
+    --color-border-primary: hsl(0, 0%, 34%);
+    --color-link-hover: hsl(209 22% 19%);
+    --color-placeholder: hsl(210 34% 80%);
+    --radius-base: 1.5rem;
+}
+
 html {
     font-size: 10px;
 }
@@ -96,7 +125,7 @@ a {
 }
 
 a:hover, a:focus, a:active {
-    color: #39b54a;
+    color: var(--color-brand);
 }
 
 a:hover, a:active {
@@ -2200,7 +2229,8 @@ html.no-csstransitions .home-content__main {
 .s-about {
     padding-top: 16.2rem;
     padding-bottom: 9rem;
-    background-color: #39b54a;
+    /* background-color: #39b54a; */
+    background-color: var(--color-brand);
     color: #010507;
     position: relative;
 }
