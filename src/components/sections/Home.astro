@@ -56,7 +56,7 @@
                 <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twitter</span></a>
             </li>
             <li>
-                <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
+                <a href="https://instagram.com/raiden.electrical?igshid=MzRlODBiNWFlZA=="><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
             </li>
             <li>
                 <!-- <a href="#0"><i class="fa fa-behance" aria-hidden="true"></i><span>Behance</span></a> -->
@@ -69,63 +69,91 @@
 
     </section> <!-- end s-home -->
     
-    <style>
-        .home-content__buttons {
-            padding-top: 3rem;
+<style>
+    .home-content__buttons {
+        padding-top: 3rem;
+        text-align: left;
+    }
+
+    .home-content__line {
+        background-color: #1e9cf1;
+    }
+
+    .home-content__scroll a::before {
+        border-bottom: 2px solid #1e9cf1;
+        border-right: 2px solid #1e9cf1;
+        content: '';
+        display: block;
+        height: 8px;
+        width: 8px;
+        margin-top: -6px;
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        -webkit-transform-origin: 66% 66%;
+        -ms-transform-origin: 66% 66%;
+        transform-origin: 66% 66%;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+    }
+
+    .home-social span {
+        color: var(--color-brand);
+    }
+
+    .logo{
+        width:33.33%;
+    }
+
+    @media only screen and (max-width: 500px){
+        .logo-wrap {
             text-align: left;
         }
 
-        .home-content__line {
-            background-color: #1e9cf1;
-        }
-
-        .home-content__scroll a::before {
-            /* border-bottom: 2px solid #39b54a; */
-            /* border-right: 2px solid #39b54a; */
-            border-bottom: 2px solid #1e9cf1;
-            border-right: 2px solid #1e9cf1;
-            content: '';
-            display: block;
-            height: 8px;
-            width: 8px;
-            margin-top: -6px;
-            pointer-events: none;
+        .home-social {
+            display: flex;
             position: absolute;
-            left: 0;
-            top: 50%;
-            -webkit-transform-origin: 66% 66%;
-            -ms-transform-origin: 66% 66%;
-            transform-origin: 66% 66%;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-            -webkit-transition: all 0.15s ease-in-out;
-            transition: all 0.15s ease-in-out;
+            top: 54px;
+            left: 50px;
+            width:25%;
+            z-index: 600;
         }
 
-        .home-social span {
-            color: var(--color-brand);
-        }
-        .logo{
-            width:33.33%;
+        .home-social i {
+            font-size: 20px;
+            border: none;
         }
 
-        @media only screen and (max-width: 500px){
-            .logo-wrap {
-                text-align: left;
-            }
+    }
+    @media only screen and (max-width: 400px){
+        .home-social {
+            display: flex;
+            position: absolute;
+            top: 54px;
+            left: 15px;
+            width:25%;
+            z-index: 600;
         }
-
-        /* @media only screen and (max-width: 500px){ */
-            /* .logo { */
-                /* width: 50%;; */
-            /* } */
-        /* } */
-        @media only screen and (max-width: 700px){
-            .logo {
-                width: 50%;
-            }
+        .home-social i {
+            font-size: 20px;
+            border: none;
         }
+    }
 
-    </style>
+    /* @media only screen and (max-width: 500px){ */
+    /* .logo { */
+    /* width: 50%;; */
+    /* } */
+    /* } */
+    @media only screen and (max-width: 700px){
+        .logo {
+            width: 50%;
+        }
+    }
+
+</style>
 
