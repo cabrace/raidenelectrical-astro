@@ -4,12 +4,12 @@ const posts = await Astro.glob("/public/images/portfolio/IMG_*.jpg");
 ---
 
 <script define:vars={{posts}}>
-    posts.map((post) => {
-        console.log(post.default)
-        let fileNameIndex = post.default.lastIndexOf("/") + 1;
-        let filename = post.default.substr(fileNameIndex)
-        console.log(filename)
-    })
+    /* posts.map((post) => { */
+        /* console.log(post.default) */
+        /* let fileNameIndex = post.default.lastIndexOf("/") + 1; */
+        /* let filename = post.default.substr(fileNameIndex) */
+        /* console.log(filename) */
+    /* }) */
 </script>
 
 <!-- works
