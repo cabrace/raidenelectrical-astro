@@ -8,14 +8,14 @@
         <div class="overlay"></div>
         <div class="contact__line"></div>
 
-        <div class="row section-header" data-aos="fade-up">
+        <div class="row section-header" >
             <div class="col-full">
                 <h3 class="subhead">Contact Us</h3>
                 <h1 class="display-2 display-2--light">Get a free quote today</h1>
             </div>
         </div>
 
-        <div class="row contact-content" data-aos="fade-up">
+        <div class="row contact-content" >
 
             <div class="contact-primary">
 
@@ -120,6 +120,20 @@
 
     </section> <!-- end s-contact -->
         <style>
+          .contact-content input[type="email"]:focus, 
+          .contact-content input[type="number"]:focus, 
+          .contact-content input[type="search"]:focus, 
+          .contact-content input[type="text"]:focus, 
+          .contact-content input[type="tel"]:focus, 
+          .contact-content input[type="url"]:focus, 
+          .contact-content input[type="password"]:focus, 
+          .contact-content textarea:focus, 
+          .contact-content select:focus {
+            color: #FFFFFF;
+            border-bottom: 1px solid var(--color-brand);
+          }
+
+
             .contact__line {
                 background-color: var(--color-brand);
             }
