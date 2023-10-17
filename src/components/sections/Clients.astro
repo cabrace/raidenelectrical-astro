@@ -1,11 +1,15 @@
 ---
+ import Icon from '../Icon.astro'; 
+ let iconWidth = "5%";
+ let iconSize = "70px";
+ let pinSize = "70px";
 ---
 
 <!-- clients
     ================================================== -->
     <section id="clients" class="s-clients">
 
-        <div class="row section-header" data-aos="fade-up">
+        <div class="row section-header">
             <div class="col-full">
                 <h3 class="subhead">Client</h3>
                 <h1 class="display-2">Testimonials</h1>
@@ -29,8 +33,11 @@
             <!-- </div> [> end col-full <] -->
         <!-- </div> [> end clients-outer <] -->
 
-        <div class="row clients-testimonials" data-aos="fade-up">
+        <div class="row clients-testimonials">
             <div class="col-full">
+                  <div style="margin:0 auto;">
+                    <Icon icon="electric-quote-flip-no-stroke" width={iconSize} height={iconSize}>
+                  </div>
                 <div class="testimonials">
 
                     <div class="testimonials__slide">
@@ -44,36 +51,48 @@
                       </p>
 </p>
 
-                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar">
+                        <!-- <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonials__avatar"> -->
+                  <div style="margin:0 auto;">
+                    <Icon icon="map-pin-no-border" width={pinSize} height={pinSize}>
+                  </div>
                         <div class="testimonials__info">
-                            <span class="testimonials__name">Tim Cook</span> 
-                            <span class="testimonials__pos">CEO, Apple</span>
+                            <span class="testimonials__name">CR5</span> 
+                            <!-- <span class="testimonials__pos">CR5</span> -->
                         </div>
 
                     </div>
 
                     <div class="testimonials__slide">
 
-                        <p>Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                        Nisi eaque consequatur. Quasi voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus quisquam vel.</p>
+                        <p> 
+                            Class from beginning to end. Showed up on time and left the space clean. 
+                            Changed exactly as requested would happily have these chaps back again for more work in the future 
+                        </p>
 
-                        <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar">
+                        <!-- <img src="images/avatars/user-05.jpg" alt="Author image" class="testimonials__avatar"> -->
+                        <div style="margin:0 auto;">
+                          <Icon icon="map-pin-no-border" width={pinSize} height={pinSize}>
+                        </div>
                         <div class="testimonials__info">
-                            <span class="testimonials__name">Sundar Pichai</span> 
-                            <span class="testimonials__pos">CEO, Google</span>
+                            <span class="testimonials__name">CR2</span> 
+                            <!-- <span class="testimonials__pos">CR2</span> -->
                         </div>
 
                     </div>
 
                     <div class="testimonials__slide">
 
-                        <p>Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                        Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.</p>
+                        <p>
+                        Honest and hardworking electricians, who gave me a very competitive price, very pleased.
+                        </p>
 
-                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar">
+                        <!-- <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonials__avatar"> -->
+                        <div style="margin:0 auto;">
+                          <Icon icon="map-pin-no-border" width={pinSize} height={pinSize}>
+                        </div>
                         <div class="testimonials__info">
-                            <span class="testimonials__name">Satya Nadella</span> 
-                            <span class="testimonials__pos">CEO, Microsoft</span>
+                            <span class="testimonials__name">RH19</span> 
+                            <!-- <span class="testimonials__pos">CEO, Microsoft</span> -->
                         </div>
 
                     </div>
@@ -86,6 +105,10 @@
     </section> <!-- end s-clients -->
 
         <style>
+          .testimonials__slide p{
+            text-align: justify;
+            text-justify: inter-character;
+          }
             .subhead {
                 font-family: "montserrat-bold", sans-serif;
                 font-size: 1.7rem;
