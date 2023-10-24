@@ -1,6 +1,54 @@
 ---
 ---
 
+<script>
+// Come back to this AJAX SUBMISSION later after trying Custom SUCCESS page
+const handleSubmit = (event) => {
+
+  event.preventDefault();
+
+  const myForm = event.target;
+  const formData = new FormData(myForm);
+
+    let form = document.querySelectorAll("#contactForm");
+    form[0].reset();
+
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+  .then(() => {
+
+              console.log("Sample AJAX LOG", event)
+
+            /* let snackbar = document.getElementById("snackbar"); */
+
+            // Add the "show" class to DIV
+            /* snackbar.className = "show"; */
+
+            // After 3 seconds, remove the show class from DIV
+            /* setTimeout(() => {  */
+          /* let snackbar = document.getElementById("snackbar"); */
+              /* snackbar.className = snackbar.className.replace("show", "");  */
+            /* }, 3000); */
+
+            /* alert("Thank you for your submission") */
+  })
+  .catch((error) => alert(error));
+
+    // let form = document.querySelector("#contact");
+    // form[0].reset();
+};
+
+document.querySelector("#contact").addEventListener("submit", handleSubmit);
+
+
+
+
+</script>
+
 <!-- contact
     ================================================== -->
     <section id="contact" class="s-contact">
@@ -21,12 +69,11 @@
 
                 <h3 class="h6">Send Us A Message</h3>
 
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate"
+                <form name="contactForm" id="contactForm" method="POST" novalidate="novalidate"
                   data-netlify="true"
+                  data-netlify-recaptcha="true"
+                  netlify-honeypot="bot-field"
                   >
-                  <!-- data-netlify="true" -->
-                  <!-- data-netlify-recaptcha="true" -->
-                  <!-- netlify-honeypot="bot-field" -->
 
                         <input type="hidden" name="contactForm" value="feedback" />
                     <fieldset>
@@ -47,7 +94,9 @@
                             <textarea name="contactMessage" id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
-                            <button class="full-width btn--primary">Submit</button>
+                            <button type="submit" class="full-width btn--primary">Submit</button>
+                            <div class='captcha' data-netlify-recaptcha='true'></div>
+
                             <div class="submit-loader">
                                 <div class="text-loader">Sending...</div>
                                 <div class="s-loader">
