@@ -447,6 +447,19 @@
     };
 
 
+  var clJustified = function() {
+    $("#mygallery").justifiedGallery({
+
+      margins: -1,
+      // border: -2,
+      captions: false,
+      rowHeight: 275,
+      lastRow: 'center',
+    });
+
+  };
+
+
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
@@ -462,6 +475,7 @@
         clPlaceholder();
         clAlertBoxes();
         // clContactForm();
+        clJustified();
         clAOS();
         clAjaxChimp();
         clBackToTop();

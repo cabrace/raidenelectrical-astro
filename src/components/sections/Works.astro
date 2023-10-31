@@ -4,19 +4,16 @@ const posts = await Astro.glob("/public/images/portfolio/IMG_*.jpg");
 ---
 
 <script define:vars={{posts}}>
-    /* posts.map((post) => { */
-        /* console.log(post.default) */
-        /* let fileNameIndex = post.default.lastIndexOf("/") + 1; */
-        /* let filename = post.default.substr(fileNameIndex) */
-        /* console.log(filename) */
-    /* }) */
+    // posts.map((post) => {
+        // console.log(post.default)
+        // let fileNameIndex = post.default.lastIndexOf("/") + 1;
+        // let filename = post.default.substr(fileNameIndex)
+        // console.log(filename)
+    // })
 </script>
 
-<!-- works
-    ================================================== -->
-    <!-- {posts.map((post) => ( -->
-     <!-- post.title -->
-    <!-- ))} -->
+<!-- works 
+  ================================================== -->
 
     <section id='works' class="s-works">
 
@@ -27,211 +24,49 @@ const posts = await Astro.glob("/public/images/portfolio/IMG_*.jpg");
                     <h3 class="subhead">Recent Works</h3>
                     <h1 class="display-2 display-2--light">We love what we do, check out some of our latest works</h1>
                 </div>
-            </div> <!-- end section-header -->
-                    <!-- {posts.map((post) => ( -->
-                    <!-- <WorksBrick path={post.default} /></WorksBrick> -->
-                        <!-- <div>{post.default}</div> -->
-                    <!-- ))} -->
+            </div> 
 
         </div> <!-- end intro-wrap -->
 
         <div class="row works-content">
-            <div class="col-full masonry-wrap">
-                <div class="masonry">
-
-
-                    <!-- {posts.map((post) => ({ -->
-                    <!-- {console.log(post)} -->
-                        <!-- <WorksBrick name={post}  /> -->
-                    <!-- })} -->
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-2640.jpg" class="thumb-link" title="Shutterbug" data-size="818x1017">
-                                    <img src="images/portfolio/IMG_2640.jpg"
-                                         srcset="images/portfolio/IMG_2640.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Shutterbug
-                                </h3>
-                                <p class="item-folio__cat">
-                                Branding
-                                </p>
-                            </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- end masonry__brick  -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-2642.jpg" class="thumb-link" title="Woodcraft" data-size="828x1009">
-                                    <img src="images/portfolio/IMG_2642.jpg" 
-                                         srcset="images/portfolio/IMG_2642.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <!-- <div class="item-folio__text"> -->
-                                <!-- <h3 class="item-folio__title"> -->
-                                    <!-- Woodcraft -->
-                                <!-- </h3> -->
-                                <!-- <p class="item-folio__cat"> -->
-                                <!-- Web Design -->
-                                <!-- </p> -->
-                            <!-- </div> -->
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-2951.jpg" class="thumb-link" title="Ring Light" data-size="3024x4032">
-                                    <img src="images/portfolio/IMG_2951.jpg"
-                                         srcset="images/portfolio/IMG_2951.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <!-- <div class="item-folio__text"> -->
-                                <!-- <h3 class="item-folio__title"> -->
-                                    <!-- The Beetle -->
-                                <!-- </h3> -->
-                                <!-- <p class="item-folio__cat"> -->
-                                <!-- Web Development -->
-                                <!-- </p> -->
-                            <!-- </div> -->
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-2957.jpg" class="thumb-link" title="Grow Green" data-size="3024x4032">
-                                    <img src="images/portfolio/IMG_2957.jpg" 
-                                         srcset="images/portfolio/IMG_2957.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <!-- <div class="item-folio__text"> -->
-                                <!-- <h3 class="item-folio__title"> -->
-                                    <!-- Grow Green -->
-                                <!-- </h3> -->
-                                <!-- <p class="item-folio__cat"> -->
-                                <!-- Branding -->
-                                <!-- </p> -->
-                            <!-- </div> -->
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-3356.jpg" class="thumb-link" title="Guitarist" data-size="3024x4032">
-                                    <img src="images/portfolio/IMG_3356.jpg" 
-                                         srcset="images/portfolio/IMG_3356.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <!-- <div class="item-folio__text"> -->
-                                <!-- <h3 class="item-folio__title"> -->
-                                    <!-- Guitarist -->
-                                <!-- </h3> -->
-                                <!-- <p class="item-folio__cat"> -->
-                                <!-- Web Design -->
-                                <!-- </p> -->
-                            <!-- </div> -->
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-3355.jpg" class="thumb-link" title="Palmeira" data-size="3024x4032">
-                                    <img src="images/portfolio/IMG_3355.jpg"
-                                         srcset="images/portfolio/IMG_3355.jpg 1x" alt="">
-                                </a>
-                            </div>
-
-                            <!-- <div class="item-folio__text"> -->
-                                <!-- <h3 class="item-folio__title"> -->
-                                    <!-- Palmeira -->
-                                <!-- </h3> -->
-                                <!-- <p class="item-folio__cat"> -->
-                                <!-- Web Design -->
-                                <!-- </p> -->
-                            <!-- </div> -->
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
-                                <i class="icon-link"></i>
-                            </a>
-
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                </div> <!-- end masonry -->
-            </div> <!-- end col-full -->
+          <div id="mygallery" >
+            <a href="#works">
+              <img alt="Project" src="images/portfolio/gallery/g-2640.jpg"/>
+            </a>
+            <a href="#works">
+              <img alt="title 2" src="images/portfolio/gallery/g-2641.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-2642.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-2642.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-2951.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-2951.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-2955.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-2955.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-2957.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-3355.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-2642.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-3355.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-beetle.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-beetle.jpg"/>
+            </a>
+            <a href="images/portfolio/gallery/g-grow.jpg">
+              <img alt="title 2" src="images/portfolio/gallery/g-grow-green.jpg"/>
+            </a>
+          </div>
         </div> <!-- end works-content -->
 
     </section> <!-- end s-works -->
 
 <style>
+
+  .justified-gallery > a > img, .justified-gallery > div > img, .justified-gallery > figure > img, .justified-gallery > a > a > img, .justified-gallery > div > a > img, .justified-gallery > figure > a > img, .justified-gallery > a > svg, .justified-gallery > div > svg, .justified-gallery > figure > svg, .justified-gallery > a > a > svg, .justified-gallery > div > a > svg, .justified-gallery > figure > a > svg {
+    border: 2px solid black;
+  }
     .subhead {
         color: var(--color-brand);
     }

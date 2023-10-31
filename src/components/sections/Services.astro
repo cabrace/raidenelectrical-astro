@@ -4,36 +4,55 @@
 ---
 
 <script>
-  // Constantly check resize
-  // use JS method for resize icons: SWitched to CSS method with @mq's instead.
-
-  window.addEventListener('resize', function(event) {
-
-      /* let svgIcon = document.getElementById('svg8622'); */
-
-      /* let width = window.innerWidth */
-      if (window.matchMedia("(max-width: 800px)").matches) {
-          /* the viewport is less than or exactly 500 pixels wide */
-          // document.getElementById('#tools').setAttribute("width", "80");
-          /* console.log("Width <= 800 ", svgIcon); */
-          /* svgIcon.setAttribute("width", "80px"); */
-
-        } else {
-            /* the viewport is more than 500 pixels wide */
-            // iconWidth = "64px";
-
-            /* svgIcon.setAttibute("width", "64px") */
-          }
-      /* console.log("Current width: ", width); */
-      /* if(width <= 800 ){ */
-        /* } */
-      /* else { */
-        /* } */
-    }, true);
 </script>
 
     <!-- services
     ================================================== -->
+    <section id="field">
+
+      <!-- <div class="container"> -->
+        <!-- <div class="column"> -->
+          <!-- <h2>Column 1</h2> -->
+          <!-- <p>This is the content of column 1.</p> -->
+        <!-- </div> -->
+        <!-- <div class="column"> -->
+          <!-- <h2>Column 2</h2> -->
+          <!-- <p>This is the content of column 2.</p> -->
+        <!-- </div> -->
+        <!-- <div class="column"> -->
+          <!-- <h2>Column 3</h2> -->
+          <!-- <p>This is the content of column 3.</p> -->
+        <!-- </div> -->
+      <!-- </div> -->
+
+      <div class="container">
+        <div class="column" id="column1">
+          <div class="overlay"></div>
+            <h2>Commercial</h2>
+            <!-- <p>This is the content of column 1.</p> -->
+        </div>
+        <div class="column" id="column2">
+
+            <h2>Residential</h2>
+            <!-- <p>This is the content of column 2.</p> -->
+        </div>
+        <div class="column" id="column3">
+            <h2>Maintenance</h2>
+            <!-- <p>This is the content of column 3.</p> -->
+        </div>
+    </div>
+      
+      <!-- <div class="get-quote"> Get a free quotation now</div> -->
+      <div class="field-content__buttons">
+        <!-- <a href="#contact" class="smoothscroll btn btn--stroke hov" data-astro-cid-tiqffqol=""> -->
+          <!-- Get Quote Today -->
+        <!-- </a> -->
+        <a href="#contact" class="smoothscroll field-btn btn--stroke">
+          Get your free quote today
+        </a>
+      </div>
+    </section>
+
     <section id='services' class="s-services">
 
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
@@ -122,6 +141,171 @@
 
 
         <style>
+
+          .container {
+            display: flex;
+            height: 300px;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* padding: 20px; */
+            margin: 0px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border: 0px solid black;
+            width: 94%;
+          transition: 0.8s;
+          border: 1px solid black;
+        }
+
+        .column:hover{
+          flex-grow: 1.08;
+        }
+         /* .overlay { */
+            /* background: rgba(0, 0, 0, 0.5); */
+            /* position: absolute; */
+            /* top: 0; */
+            /* left: 0; */
+            /* width: 100%; */
+            /* height: 100%; */
+        /* } */
+
+        .column h2{
+          background: rgba(0,0,0,0.2);
+          color: white;
+          border: 1px solid white;
+          padding: 2px 50px;
+            
+        }
+
+        #column1 {
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        }
+
+        #column2 {
+            background-image: url('https://lh3.googleusercontent.com/lyc4UYiABEtD-HMhXeRjkHAN25rF12ihFl-cNZb3Qabj8FEhbAtdxNufFHtuxHOb6kLCnbXJYNQsXhyL_eXd5Or4jELV8utLwKQMW7B-V1V984zVte7iIxWeqiE3yw=w768-rw-v1-e365');
+        }
+
+        #column3 {
+              /* background-image: url('images/baby_grips.jpeg');  */
+              background-image: url('https://images.unsplash.com/photo-1553873002-785d775854c9?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* background-image: url('https://media.istockphoto.com/id/1409304338/photo/electricity-and-electrical-maintenance-service-engineer-hand-holding-ac-multimeter-checking.jpg?s=1024x1024&w=is&k=20&c=tMVBndzBuhpSSxZvZU6kG-yZyt0g_JZ3OGR4lz2znpc='); */
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                min-height: 773px;
+            }
+
+            .column {
+              width: 100%;
+              padding: 70px;
+              flex-grow: 1.5;
+            }
+        }
+
+        a.field-btn.btn--stroke {
+          display: block;
+          width: 100%;
+          background-color: #000;
+          /* border: 0.2rem solid #39b54a; */
+          color: #fff;
+          text-align:center;
+          text-transform: uppercase;
+        }
+
+
+        /* .btn--stroke, button.btn--stroke { */
+          /* background: white; */
+          /* border: 1px solid black; */
+          /* color: black; */
+          /* background-color: white; */
+        /* } */
+
+        .field-content__buttons {
+
+        }
+
+        .field-content__buttons a{
+          background-color: white;
+          width: 100%;
+          border-color: black;
+          padding: 10px 0px;
+          color: #FFFFFF;
+          /* margin: 3px 0px; */
+          letter-spacing: .25rem;
+          -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
+        }
+
+        .field-content__buttons:hover a{
+          background: #FFFFFF !important;
+          color: black;
+          border: 0.2rem solid black;
+          letter-spacing: 0.4rem;
+          width:100%;
+        }
+
+          /* .container { */
+            /* max-width: 100%; */
+            /* margin: 0 auto; */
+            /* display: flex; */
+            /* flex-wrap: wrap; */
+            /* justify-content: space-between; */
+            /* padding: 20px; */
+/*            */
+        /* } */
+/*  */
+
+          /* .container { */
+            /* display: flex; */
+            /* height: 100vh; */
+          /* } */
+          /* .column { */
+            /* flex: 1; */
+            /* background-size: cover; */
+            /* background-repeat: no-repeat; */
+            /* background-position: center; */
+            /* padding: 20px; */
+            /* display: flex; */
+            /* flex-direction: column; */
+            /* justify-content: center; */
+            /* align-items: center; */
+            /* color: white; */
+          /* } */
+
+
+          /* .column { */
+            /* flex: 1; */
+            /* background-color: rgba(255, 255, 255, 0.8); */
+            /* border: 1px solid #ccc; */
+            /* padding: 20px; */
+            /* margin: 10px; */
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+            /* width: 100%; */
+            /* flex-direction: column; */
+          /* } */
+
+          /* @media (max-width: 768px) { */
+            /* .container { */
+              /* flex-direction: column; */
+            /* } */
+/*  */
+            /* .column { */
+              /* width: 100%; */
+            /* } */
+          /* } */
+
+
 
         :root{
             --iconSmall: 64px;
