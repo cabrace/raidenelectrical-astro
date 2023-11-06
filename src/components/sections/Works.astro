@@ -29,36 +29,47 @@ const posts = await Astro.glob("/public/images/portfolio/IMG_*.jpg");
         </div> <!-- end intro-wrap -->
 
         <div class="row works-content">
-          <div id="mygallery" >
-            <a href="#works">
+          <div id="justifiedGallery" >
+            <a href="images/portfolio/gallery/g-2640.jpg" rel="gallrey1">
               <img alt="Project" src="images/portfolio/gallery/g-2640.jpg"/>
             </a>
-            <a href="#works">
-              <img alt="title 2" src="images/portfolio/gallery/g-2641.jpg"/>
+            <a href="images/portfolio/gallery/g-2641.jpg" rel="gallery1">
+              <img alt="title 1" src="images/portfolio/gallery/g-2641.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-2642.jpg">
+            <a href="images/portfolio/gallery/g-2642.jpg" rel="gallery1">
               <img alt="title 2" src="images/portfolio/gallery/g-2642.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-2951.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-2951.jpg"/>
+            <a href="images/portfolio/gallery/g-2951.jpg" rel="gallery1">
+              <img alt="title 3" src="images/portfolio/gallery/g-2951.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-2955.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-2955.jpg"/>
+            <a href="images/portfolio/gallery/g-2955.jpg" rel="gallery1">
+              <img alt="title 4" src="images/portfolio/gallery/g-2955.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-2957.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-3355.jpg"/>
+            <a href="images/portfolio/gallery/g-2957.jpg" rel="gallery1">
+              <img alt="title 5" src="images/portfolio/gallery/g-2957.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-2642.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-3355.jpg"/>
+            <a href="images/portfolio/gallery/g-3355.jpg" rel="gallery1">
+              <img alt="title 6" src="images/portfolio/gallery/g-3355.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-beetle.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-beetle.jpg"/>
+            <a href="images/portfolio/gallery/g-beetle.jpg" rel="gallery1">
+              <img alt="title 7" src="images/portfolio/gallery/g-beetle.jpg"/>
             </a>
-            <a href="images/portfolio/gallery/g-grow.jpg">
-              <img alt="title 2" src="images/portfolio/gallery/g-grow-green.jpg"/>
+            <a href="images/portfolio/gallery/g-grow-green.jpg" rel="gallery1">
+              <img alt="title 8" src="images/portfolio/gallery/g-grow-green.jpg"/>
             </a>
           </div>
         </div> <!-- end works-content -->
+        <div class="item-folio">
+
+        <!-- <div class="item-folio__thumb"> -->
+            <!-- <a href="images/portfolio/gallery/g-palmeira.jpg" class="thumb-link" title="Palmeira" data-size="1050x700"> -->
+                <!-- <img src="images/portfolio/palmeira.jpg" -->
+                     <!-- srcset="images/portfolio/palmeira.jpg 1x, images/portfolio/palmeira@2x.jpg 2x" alt=""> -->
+            <!-- <a href="images/portfolio/gallery/g-3355.jpg" class="thumb-link" title="Palmeira" data-size="3024x4032"> -->
+                <!-- <img src="images/portfolio/IMG_3355.jpg" -->
+                     <!-- srcset="images/portfolio/IMG_3355.jpg 1x" alt=""> -->
+            <!-- </a> -->
+        <!-- </div> -->
 
     </section> <!-- end s-works -->
 
@@ -67,7 +78,33 @@ const posts = await Astro.glob("/public/images/portfolio/IMG_*.jpg");
   .justified-gallery > a > img, .justified-gallery > div > img, .justified-gallery > figure > img, .justified-gallery > a > a > img, .justified-gallery > div > a > img, .justified-gallery > figure > a > img, .justified-gallery > a > svg, .justified-gallery > div > svg, .justified-gallery > figure > svg, .justified-gallery > a > a > svg, .justified-gallery > div > a > svg, .justified-gallery > figure > a > svg {
     border: 2px solid black;
   }
-    .subhead {
-        color: var(--color-brand);
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * works
+ * ------------------------------------------------------------------- */
+@media only screen and (max-width: 800px) {
+    .item-folio__title, .item-folio__cat {
+        font-size: 1.3rem;
     }
+}
+
+@media only screen and (max-width: 600px) {
+    .s-works {
+        padding-bottom: 12rem;
+    }
+    .s-works .intro-wrap {
+        padding: 12rem 0 25.2rem;
+    }
+    .works-content {
+        margin-top: -25.2rem;
+    }
+    .masonry__brick {
+        float: none;
+        width: 100%;
+    }
+    .item-folio__title, .item-folio__cat {
+        font-size: 1.4rem;
+    }
+}
 </style>

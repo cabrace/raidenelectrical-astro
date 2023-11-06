@@ -448,7 +448,8 @@
 
 
   var clJustified = function() {
-    $("#mygallery").justifiedGallery({
+
+    $("#justifiedGallery").justifiedGallery({
 
       margins: -1,
       // border: -2,
@@ -457,7 +458,33 @@
       lastRow: 'center',
     });
 
+    $('#justifiedGallery').justifiedGallery({
+      lastRow : 'center', 
+      rowHeight : 275, 
+      rel : 'gallery1', //replace with 'gallery1' the rel attribute of each link
+      margins : -1,
+      captions: false,
+    }).on('jg.complete', function () {
+      $(this).find('a').colorbox({
+        maxWidth : '80%',
+        maxHeight : '80%',
+        opacity : 0.8,
+        transition : 'elastic',
+        current : ''
+      });
+    });
+
   };
+
+  // var clLightbox = function() {
+      // $('a.jg-entry').colorbox({rel:'gal'});
+//
+      // let gallery = $('#justifiedGallery a').simpleLightbox();
+      // gallery.on('show.simplelightbox', function () {
+        // Do something…
+          // nav: true
+      // });
+  // };
 
 
    /* Initialize
@@ -467,15 +494,17 @@
         clPreloader();
         clMenuOnScrolldown();
         clOffCanvas();
-        clPhotoswipe();
+        // clPhotoswipe();
         clStatCount();
         clMasonryFolio();
         clSlickSlider();
         clSmoothScroll();
         clPlaceholder();
         clAlertBoxes();
+
         // clContactForm();
         clJustified();
+        // clLightbox();
         clAOS();
         clAjaxChimp();
         clBackToTop();

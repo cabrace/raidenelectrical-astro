@@ -5,6 +5,7 @@ import About from '../components/sections/About.astro';
 import Services from '../components/sections/Services.astro';
 import Works from '../components/sections/Works.astro';
 import Clients from '../components/sections/Clients.astro';
+import Choose from '../components/sections/Choose.astro';
 import Contact from '../components/sections/Contact.astro';
 import Footer from '../components/sections/Footer.astro';
 import Photoswipe from '../components/sections/Photoswipe.astro';
@@ -22,7 +23,10 @@ import Preloader from '../components/sections/Preloader.astro';
 
     <Works />
 
+    <Choose />
+    
     <Clients />
+
 
     <Contact />
 
@@ -38,6 +42,8 @@ import Preloader from '../components/sections/Preloader.astro';
     ================================================== -->
     <script is:inline src="/js/jquery-3.2.1.min.js"></script>
     <script client:load src="/js/jquery.justifiedGallery.js"></script>
+    <script client:load src="/js/jquery.colorbox.js"></script>
+    <!-- <script client:load src="/js/jquery.simple-lightbox.js"></script> -->
     <!-- <script client:load src="/js/jquery.justified.js"></script> -->
     <script client:load src="/js/plugins.js"></script>
     <script client:load src="/js/main.js"></script>
