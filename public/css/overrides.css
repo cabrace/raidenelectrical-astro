@@ -8,3 +8,8 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.btn--stroke.hov {
+    background: #FFFFFF!important;
+    color: #000 !important;
+}
