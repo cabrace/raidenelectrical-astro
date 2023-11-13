@@ -1,6 +1,8 @@
 ---
  import Icon from '../Icon.astro'; 
- let iconWidth = "100";
+ let iconWidth = "100px";
+ let iconSize = "100px";
+ let pinSize = "70px";
 ---
 
 <!-- footer
@@ -52,11 +54,42 @@
                 </div>
             </div>
 
+      <div class="row section-header">
+
+                <!-- <div class="col-full"> -->
+                    <!-- <h3 class="subhead">Certifications from</h3> -->
+                    <!-- <h1 class="display-2 display-2--dark">Testimonials</h1> -->
+                <!-- </div> -->
+
+      </div> <!-- end section-header -->
         </div> <!-- end footer-bottom -->
+          <div class="certification">
+            <div>
+              <Icon icon="checkatrade--white" width="110px" height={iconSize}>
+            </div>
+
+            <div>
+              <Icon icon="niceic--white" width={iconSize} height={iconSize}>
+            </div>
+            <div>
+              <Icon icon="chas--white" width="80px" height={iconSize}>
+            </div>
+          </div>
 
     </footer> <!-- end footer -->
 
 <style>
+
+  footer {
+      padding-bottom:0px;
+  }
+          .certification {
+            margin-top: 20px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-evenly;
+            border-top: 1px solid #1e1e1e;
+          }
 
     .raiden-logo svg {
       height:90px;

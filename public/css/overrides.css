@@ -7,3 +7,7 @@
     background: #FFFFFF!important;
     color: #000 !important;
 }
+
+.slick-slider .slick-dots li.slick-active button, .slick-slider .slick-dots li:hover button {
+    background: var(--color-brand);
+}
