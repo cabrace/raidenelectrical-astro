@@ -222,14 +222,33 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
 
     </section> <!-- end s-contact -->
         <style>
-          .contact-content input[type="email"]:focus, 
-          .contact-content input[type="number"]:focus, 
-          .contact-content input[type="search"]:focus, 
-          .contact-content input[type="text"]:focus, 
-          .contact-content input[type="tel"]:focus, 
-          .contact-content input[type="url"]:focus, 
-          .contact-content input[type="password"]:focus, 
-          .contact-content textarea:focus, 
+
+          .contact-social li a:hover{
+            color: var(--color-brand);
+          }
+
+          .btn.btn--primary:hover,
+          button.btn--primary:hover,
+          input[type="submit"].btn--primary:hover,
+          input[type="reset"].btn--primary:hover,
+          input[type="button"].btn--primary:hover,
+          .btn.btn--primary:focus,
+          button.btn--primary:focus,
+          input[type="submit"].btn--primary:focus,
+          input[type="reset"].btn--primary:focus,
+          input[type="button"].btn--primary:focus {
+            color: #FFF;
+            background: var(--color-brand);
+            border-color:  var(--color-brand);
+          }
+          .contact-content input[type="email"]:focus,
+          .contact-content input[type="number"]:focus,
+          .contact-content input[type="search"]:focus,
+          .contact-content input[type="text"]:focus,
+          .contact-content input[type="tel"]:focus,
+          .contact-content input[type="url"]:focus,
+          .contact-content input[type="password"]:focus,
+          .contact-content textarea:focus,
           .contact-content select:focus {
             color: #FFFFFF;
             border-bottom: 1px solid var(--color-brand);
