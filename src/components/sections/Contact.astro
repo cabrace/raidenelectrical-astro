@@ -110,15 +110,17 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
 
                 <h3 class="h6">Send Us A Message</h3>
 
+                <!-- The actual snackbar -->
+                <div id="snackbar">Your Message Has Been Sent!</div>
 
-                <form name="RE_Contact" id="contactForm" method="POST" novalidate="novalidate"
+                <form id="contactForm" name="raiden-contact" method="POST" novalidate="novalidate"
                   data-netlify="true"
                   data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
                   netlify
                   >
 
-                    <input type="hidden" name="RE_Contact" value="feedback" />
+                    <input type="hidden" name="raiden-contactontact" value="feedback" />
                     <fieldset>
 
                         <div class="form-field">
@@ -163,8 +165,6 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                     Your message was sent, thank you!<br>
                 </div>
 
-                <!-- The actual snackbar -->
-                <div id="snackbar">Your Message Has Been Sent! </div>
 
             </div> <!-- end contact-primary -->
 
@@ -275,7 +275,7 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
               visibility: hidden; /* Hidden by default. Visible on click */
               min-width: 250px; /* Set a default minimum width */
               margin-left: -125px; /* Divide value of min-width by 2 */
-              background-color: #333; /* Black background color */
+              background-color: var(--color-brand); /* Black background color */
               color: #fff; /* White text color */
               text-align: center; /* Centered text */
               border-radius: 2px; /* Rounded borders */
