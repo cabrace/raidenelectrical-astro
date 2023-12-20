@@ -69,11 +69,11 @@ const handleSubmit = (event) => {
             // Add the "show" class to DIV
             snackbar.className = "show";
 
-            // After 3 seconds, remove the show class from DIV
-            setTimeout(() => { 
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(() => { 
           let snackbar = document.getElementById("snackbar");
-              snackbar.className = snackbar.className.replace("show", ""); 
-            }, 3000);
+          snackbar.className = snackbar.className.replace("show", ""); 
+        }, 3000);
 
             /* alert("Thank you for your submission") */
   })
@@ -113,14 +113,14 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                 <!-- The actual snackbar -->
                 <div id="snackbar">Your Message Has Been Sent!</div>
 
-                <form id="contactForm" name="raiden-contact" method="POST" novalidate="novalidate"
+                <form id="contactForm" name="contactForm" method="POST" novalidate="novalidate"
                   data-netlify="true"
                   data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
                   netlify
                   >
 
-                    <input type="hidden" name="contactForm" value="contact" />
+                    <input type="hidden" name="contactForm" value="feedback" />
                     <fieldset>
 
                         <div class="form-field">
@@ -202,7 +202,7 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                             <a href="https://instagram.com/raiden.electrical?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100090056271631" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
                         <!-- <li> -->
                             <!-- <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
