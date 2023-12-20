@@ -44,45 +44,58 @@
 /*  */
 /* document.querySelector("#contact").addEventListener("submit", handleSubmit); */
 
+
+  // Possible values : [success, error]
+
+  let loadingState = (state) => {
+      let loader = document.getElementById('submitLoader')
+      state === 'show' ? loader.style.visibility = "visible" : loader.style.visibility = "hidden"
+    }
+
+  let snackbarMessage = (state) =>{
+
+      let snackbar = document.getElementById(`snackbar-${state}`);
+
+      snackbar.className = "show";
+
+
+      // loadingState('show'); //Set Loading State
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(() => { 
+          let snackbar = document.getElementById(`snackbar-${state}`);
+          snackbar.className = snackbar.className.replace("show", ""); 
+
+          // loadingState('hide') //Set Loading State
+        }, 3000);
+    }
+
 const handleSubmit = (event) => {
 
 
-  event.preventDefault();
-
   const myForm = event.target;
   const formData = new FormData(myForm);
-  console.log('contact form', formData)
 
     let form = document.querySelectorAll("#contactForm");
     form[0].reset();
 
+  event.preventDefault();
 
   fetch("/", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams(formData).toString(),
   })
-  .then(() => {
+  .then((response) => {
 
               /* console.log("Sample AJAX LOG", event) */
-    console.log('AJAX LOG')
-
-            let snackbar = document.getElementById("snackbar");
-
-            console.log("snackbar", snackbar)
-
-            // Add the "show" class to DIV
-            snackbar.className = "show";
-
-      // After 3 seconds, remove the show class from DIV
-      setTimeout(() => { 
-          let snackbar = document.getElementById("snackbar");
-          snackbar.className = snackbar.className.replace("show", ''); 
-        }, 3000);
-
+            snackbarMessage('success');
             /* alert("Thank you for your submission") */
   })
-  .catch((error) => alert(error));
+  .catch(
+      (error) => {
+      snackbarMessage('error');
+  });
 
     // let form = document.querySelector("#contact");
     // form[0].reset();
@@ -116,39 +129,35 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                 <h3 class="h6">Send Us A Message</h3>
 
 
-                <!-- The actual snackbar -->
-                <div id="snackbar">Your Message Has Been Sent!</div>
-
-                <form id="contactForm" name="raiden_contact_form" method="POST" novalidate="novalidate"
+                <form id="contactForm" name="contactForm" method="POST"
                   data-netlify="true"
                   data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
                   >
 
-                    <input type="hidden" name="raiden_contact_form" value="feedback" />
+                    <input type="hidden" name="contactForm" value="feedback" />
                     <fieldset>
 
                         <div class="form-field">
-                            <!-- <input name="contact-name" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="true" aria-required="true" class="full-width" required> -->
-                            <input name="name" type="text" id="contactName" placeholder="Your Name" value="" minlength="2" aria-required="true" class="full-width" required>
+                            <input name="contactName" required type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="true" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="email" type="email" id="contactEmail" placeholder="Your Email" value="" required="true" aria-required="true" class="full-width" required>
+                            <input name="contactEmail" required type="email" id="contactEmail" placeholder="Your Email" value="" required="true" aria-required="true" class="full-width">
                         </div>
                         <!-- <div class="form-field"> -->
                             <!-- <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width"> -->
                         <!-- </div> -->
                         <div class="form-field">
-                            <input name="where" type="text" id="contactWhere" placeholder="Where did you hear about us?" value="" class="full-width">
+                            <input name="contactWhere" type="text" id="contactWhere" placeholder="Where did you hear about us?" value="" class="full-width">
                         </div>
                         <div class="form-field">
-                            <textarea name="message" id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width" required></textarea>
+                            <textarea name="contactMessage" required id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
                             <button type="submit" class="full-width btn--primary">Submit</button>
                             <div class='captcha' data-netlify-recaptcha='true'></div>
 
-                            <div class="submit-loader">
+                            <div id="submitLoader" class="submit-loader">
                                 <div class="text-loader">Sending...</div>
                                 <div class="s-loader">
                                     <div class="bounce1"></div>
@@ -171,6 +180,12 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                     Your message was sent, thank you!<br>
                 </div>
 
+
+                <!-- The actual snackbar -->
+                <div id="snackbar-success" class="">Your Message Has Been Sent! </div>
+
+                <!-- The actual snackbar -->
+                <div id="snackbar-error" class="">Error Sending. Contact Via Mobile!</div>
 
             </div> <!-- end contact-primary -->
 
@@ -208,17 +223,8 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                             <a href="https://instagram.com/raiden.electrical?igshid=MzRlODBiNWFlZA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/profile.php?id=100090056271631" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                         </li>
-                        <!-- <li> -->
-                            <!-- <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
-                        <!-- </li> -->
-                        <!-- <li> -->
-                            <!-- <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a> -->
-                        <!-- </li> -->
-                        <!-- <li> -->
-                            <!-- <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a> -->
-                        <!-- </li> -->
                     </ul> <!-- end contact-social -->
 
                 </div> <!-- end contact-info -->
@@ -228,6 +234,11 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
 
     </section> <!-- end s-contact -->
         <style>
+
+          #submitLoader.submit-loader{
+            display: block;
+            visibility: hidden;
+          }
 
           .contact-social li a:hover{
             color: var(--color-brand);
@@ -274,14 +285,49 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                 background: var(--color-brand);
                 border-color: var(--color-brand);
             }
-
             /* The snackbar - position it at the bottom and in the middle of the screen */
-            #snackbar {
+            #snackbar-error {
 
               visibility: hidden; /* Hidden by default. Visible on click */
               min-width: 250px; /* Set a default minimum width */
               margin-left: -125px; /* Divide value of min-width by 2 */
-              background-color: var(--color-brand); /* Black background color */
+              background-color: #333; /* Black background color */
+              color: #fff; /* White text color */
+              text-align: center; /* Centered text */
+              border-radius: 2px; /* Rounded borders */
+              border: 2px solid red;
+              padding: 16px; /* Padding */
+              position: fixed; /* Sit on top of the screen */
+              z-index: 800; /* Add a z-index if needed */
+              left: 50%; /* Center the snackbar */
+              bottom: 300px; /* 30px from the bottom */
+            }
+            /* Show the snackbar when clicking on a button (class added with JavaScript) */
+            #snackbar-error.show {
+              visibility: visible; /* Show the snackbar */
+              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+                 However, delay the fade out process for 2.5 seconds */
+              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+              animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+
+            /* Show the snackbar when clicking on a button (class added with JavaScript) */
+            #snackbar-success.show {
+              visibility: visible; /* Show the snackbar */
+              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+                 However, delay the fade out process for 2.5 seconds */
+              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+              animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            /* The snackbar - position it at the bottom and in the middle of the screen */
+            #snackbar-success {
+
+              visibility: hidden; /* Hidden by default. Visible on click */
+              min-width: 250px; /* Set a default minimum width */
+              margin-left: -125px; /* Divide value of min-width by 2 */
+              background-color: #333; /* Black background color */
               color: #fff; /* White text color */
               text-align: center; /* Centered text */
               border-radius: 2px; /* Rounded borders */
@@ -293,7 +339,7 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
             }
 
             /* Show the snackbar when clicking on a button (class added with JavaScript) */
-            #snackbar.show {
+            #snackbar-success.show {
               visibility: visible; /* Show the snackbar */
               /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
                  However, delay the fade out process for 2.5 seconds */
