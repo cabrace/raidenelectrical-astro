@@ -11,3 +11,113 @@
 .slick-slider .slick-dots li.slick-active button, .slick-slider .slick-dots li:hover button {
     background: var(--color-brand);
 }
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar-error {
+
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  border: 2px solid red;
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 800; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 300px; /* 30px from the bottom */
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar-error.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+
+            /* Show the snackbar when clicking on a button (class added with JavaScript) */
+            #snackbar-success.show {
+              visibility: visible; /* Show the snackbar */
+              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+              However, delay the fade out process for 2.5 seconds */
+-webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            /* The snackbar - position it at the bottom and in the middle of the screen */
+            #snackbar-success {
+
+              visibility: hidden; /* Hidden by default. Visible on click */
+              min-width: 250px; /* Set a default minimum width */
+              margin-left: -125px; /* Divide value of min-width by 2 */
+              background-color: var(--color-brand); /* Black background color */
+              color: #fff; /* White text color */
+              text-align: center; /* Centered text */
+              border-radius: 2px; /* Rounded borders */
+              padding: 16px; /* Padding */
+              position: fixed; /* Sit on top of the screen */
+              z-index: 800; /* Add a z-index if needed */
+              left: 50%; /* Center the snackbar */
+              bottom: 300px; /* 30px from the bottom */
+            }
+
+            /* Show the snackbar when clicking on a button (class added with JavaScript) */
+            #snackbar-success.show {
+              visibility: visible; /* Show the snackbar */
+              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+              However, delay the fade out process for 2.5 seconds */
+              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+              animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            /* Animations to fade the snackbar in and out */
+            @-webkit-keyframes fadein {
+              from {bottom: 0; opacity: 0;}
+              to {bottom: 300px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+              from {bottom: 0; opacity: 0;}
+              to {bottom: 300px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+              from {bottom: 300px; opacity: 1;}
+              to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+              from {bottom: 300px; opacity: 1;}
+              to {bottom: 0; opacity: 0;}
+            }
+
+            .btn.btn--primary:hover,
+            button.btn--primary:hover,
+            input[type="submit"].btn--primary:hover,
+            input[type="reset"].btn--primary:hover,
+            input[type="button"].btn--primary:hover,
+            .btn.btn--primary:focus,
+            button.btn--primary:focus,
+            input[type="submit"].btn--primary:focus,
+            input[type="reset"].btn--primary:focus,
+            input[type="button"].btn--primary:focus {
+              color: #FFF;
+              background: var(--color-brand);
+              border-color:  var(--color-brand);
+            }
+            .contact-content input[type="email"]:focus,
+            .contact-content input[type="number"]:focus,
+            .contact-content input[type="search"]:focus,
+            .contact-content input[type="text"]:focus,
+            .contact-content input[type="tel"]:focus,
+            .contact-content input[type="url"]:focus,
+            .contact-content input[type="password"]:focus,
+            .contact-content textarea:focus,
+            .contact-content select:focus {
+              color: #FFFFFF;
+              border-bottom: 1px solid var(--color-brand);
+            }

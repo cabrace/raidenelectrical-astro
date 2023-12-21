@@ -50,14 +50,13 @@
   let loadingState = (state) => {
       let loader = document.getElementById('submitLoader')
       state === 'show' ? loader.style.visibility = "visible" : loader.style.visibility = "hidden"
-    }
+  }
 
   let snackbarMessage = (state) =>{
 
       let snackbar = document.getElementById(`snackbar-${state}`);
 
       snackbar.className = "show";
-
 
       // loadingState('show'); //Set Loading State
 
@@ -68,38 +67,36 @@
 
           // loadingState('hide') //Set Loading State
         }, 3000);
-    }
+  }
 
-const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
 
 
-  const myForm = event.target;
-  const formData = new FormData(myForm);
+      const myForm = event.target;
+      const formData = new FormData(myForm);
 
-    let form = document.querySelectorAll("#contactForm");
-    form[0].reset();
+      let form = document.querySelectorAll("#contactForm");
+      form[0].reset();
 
-  event.preventDefault();
+      event.preventDefault();
 
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(formData).toString(),
-  })
-  .then((response) => {
-
-              /* console.log("Sample AJAX LOG", event) */
+      fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+        .then((response) => {
+            /* console.log("Sample AJAX LOG", event) */
             snackbarMessage('success');
-            /* alert("Thank you for your submission") */
-  })
-  .catch(
-      (error) => {
-      snackbarMessage('error');
-  });
+          })
+        .catch(
+            (error) => {
+                snackbarMessage('error');
+              });
 
-    // let form = document.querySelector("#contact");
-    // form[0].reset();
-};
+      // let form = document.querySelector("#contact");
+      // form[0].reset();
+    };
 
 document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
 
@@ -133,25 +130,26 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                   data-netlify="true"
                   data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
+                  netlify
                   >
 
-                    <input type="hidden" name="contactForm" value="feedback" />
+                    <input type="hidden" name="contactForm" value="RaidenElectrical" />
                     <fieldset>
 
                         <div class="form-field">
-                            <input name="contactName" required type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="true" aria-required="true" class="full-width">
+                            <input name="name" required type="text" id="contactName" placeholder="Your Name" value="" minlength="2" required="true" aria-required="true" class="full-width">
                         </div>
                         <div class="form-field">
-                            <input name="contactEmail" required type="email" id="contactEmail" placeholder="Your Email" value="" required="true" aria-required="true" class="full-width">
+                            <input name="email" required type="email" id="contactEmail" placeholder="Your Email" value="" required="true" aria-required="true" class="full-width">
                         </div>
                         <!-- <div class="form-field"> -->
                             <!-- <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width"> -->
                         <!-- </div> -->
                         <div class="form-field">
-                            <input name="contactWhere" type="text" id="contactWhere" placeholder="Where did you hear about us?" value="" class="full-width">
+                            <input name="clientHeardFrom" type="text" id="contactHeardFrom" placeholder="Where did you hear about us?" value="" class="full-width">
                         </div>
                         <div class="form-field">
-                            <textarea name="contactMessage" required id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                            <textarea name="message" required id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
                         </div>
                         <div class="form-field">
                             <button type="submit" class="full-width btn--primary">Submit</button>
@@ -244,32 +242,6 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
             color: var(--color-brand);
           }
 
-          .btn.btn--primary:hover,
-          button.btn--primary:hover,
-          input[type="submit"].btn--primary:hover,
-          input[type="reset"].btn--primary:hover,
-          input[type="button"].btn--primary:hover,
-          .btn.btn--primary:focus,
-          button.btn--primary:focus,
-          input[type="submit"].btn--primary:focus,
-          input[type="reset"].btn--primary:focus,
-          input[type="button"].btn--primary:focus {
-            color: #FFF;
-            background: var(--color-brand);
-            border-color:  var(--color-brand);
-          }
-          .contact-content input[type="email"]:focus,
-          .contact-content input[type="number"]:focus,
-          .contact-content input[type="search"]:focus,
-          .contact-content input[type="text"]:focus,
-          .contact-content input[type="tel"]:focus,
-          .contact-content input[type="url"]:focus,
-          .contact-content input[type="password"]:focus,
-          .contact-content textarea:focus,
-          .contact-content select:focus {
-            color: #FFFFFF;
-            border-bottom: 1px solid var(--color-brand);
-          }
 
 
             .contact__line {
@@ -284,87 +256,5 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
             button.btn--primary, button.btn--primary, input[type="submit"].btn--primary:hover, input[type="reset"].btn--primary:hover, input[type="button"].btn--primary:hover, .btn.btn--primary:focus, button.btn--primary:focus, input[type="submit"].btn--primary:focus, input[type="reset"].btn--primary:focus, input[type="button"].btn--primary:focus {
                 background: var(--color-brand);
                 border-color: var(--color-brand);
-            }
-            /* The snackbar - position it at the bottom and in the middle of the screen */
-            #snackbar-error {
-
-              visibility: hidden; /* Hidden by default. Visible on click */
-              min-width: 250px; /* Set a default minimum width */
-              margin-left: -125px; /* Divide value of min-width by 2 */
-              background-color: #333; /* Black background color */
-              color: #fff; /* White text color */
-              text-align: center; /* Centered text */
-              border-radius: 2px; /* Rounded borders */
-              border: 2px solid red;
-              padding: 16px; /* Padding */
-              position: fixed; /* Sit on top of the screen */
-              z-index: 800; /* Add a z-index if needed */
-              left: 50%; /* Center the snackbar */
-              bottom: 300px; /* 30px from the bottom */
-            }
-            /* Show the snackbar when clicking on a button (class added with JavaScript) */
-            #snackbar-error.show {
-              visibility: visible; /* Show the snackbar */
-              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-                 However, delay the fade out process for 2.5 seconds */
-              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-              animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            }
-
-
-            /* Show the snackbar when clicking on a button (class added with JavaScript) */
-            #snackbar-success.show {
-              visibility: visible; /* Show the snackbar */
-              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-                 However, delay the fade out process for 2.5 seconds */
-              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-              animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            }
-
-            /* The snackbar - position it at the bottom and in the middle of the screen */
-            #snackbar-success {
-
-              visibility: hidden; /* Hidden by default. Visible on click */
-              min-width: 250px; /* Set a default minimum width */
-              margin-left: -125px; /* Divide value of min-width by 2 */
-              background-color: #333; /* Black background color */
-              color: #fff; /* White text color */
-              text-align: center; /* Centered text */
-              border-radius: 2px; /* Rounded borders */
-              padding: 16px; /* Padding */
-              position: fixed; /* Sit on top of the screen */
-              z-index: 800; /* Add a z-index if needed */
-              left: 50%; /* Center the snackbar */
-              bottom: 300px; /* 30px from the bottom */
-            }
-
-            /* Show the snackbar when clicking on a button (class added with JavaScript) */
-            #snackbar-success.show {
-              visibility: visible; /* Show the snackbar */
-              /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-                 However, delay the fade out process for 2.5 seconds */
-              -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-              animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            }
-
-            /* Animations to fade the snackbar in and out */
-            @-webkit-keyframes fadein {
-              from {bottom: 0; opacity: 0;}
-              to {bottom: 300px; opacity: 1;}
-            }
-
-            @keyframes fadein {
-              from {bottom: 0; opacity: 0;}
-              to {bottom: 300px; opacity: 1;}
-            }
-
-            @-webkit-keyframes fadeout {
-              from {bottom: 300px; opacity: 1;}
-              to {bottom: 0; opacity: 0;}
-            }
-
-            @keyframes fadeout {
-              from {bottom: 300px; opacity: 1;}
-              to {bottom: 0; opacity: 0;}
             }
         </style>
