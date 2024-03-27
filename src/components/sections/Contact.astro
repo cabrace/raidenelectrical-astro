@@ -142,14 +142,35 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
                         <div class="form-field">
                             <input name="email" required type="email" id="contactEmail" placeholder="Your Email" value="" required="true" aria-required="true" class="full-width">
                         </div>
-                        <!-- <div class="form-field"> -->
-                            <!-- <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width"> -->
-                        <!-- </div> -->
+                        <div class="form-field">
+                            <input name="number" type="text" id="contactNumber" placeholder="Contact Number" value="" class="full-width">
+                        </div>
                         <div class="form-field">
                             <input name="clientHeardFrom" type="text" id="contactHeardFrom" placeholder="Where did you hear about us?" value="" class="full-width">
                         </div>
                         <div class="form-field">
                             <textarea name="message" required id="contactMessage" placeholder="What work would you like done" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        </div>
+
+                        
+
+
+                        <div class="form-control contact-method">
+
+                          <h3 class="h6">Tell us Your Preferred contact method</h3>
+
+                          <label class="email">
+                            <input type="radio" name="option" value="method-email">
+                            <span class="custom-radio"></span>
+                            <span class="label-text">Email</span>
+                          </label>
+
+                          <label class="phone">
+                            <input type="radio" name="option" value="method-phone" checked="checked">
+                            <span class="custom-radio"></span>
+                            <span class="label-text">Phone</span>
+                          </label>
+
                         </div>
                         <div class="form-field">
                             <button type="submit" class="full-width btn--primary">Submit</button>
@@ -241,6 +262,78 @@ document.querySelector("#contactForm").addEventListener("submit", handleSubmit);
           .contact-social li a:hover{
             color: var(--color-brand);
           }
+
+          /* .contact-content input::-webkit-input-placeholder, */
+          /* .contact-content select::-webkit-input-placeholder, */
+          /* .contact-content textarea::-webkit-input-placeholder { */
+            /* color: #757575; */
+          /* } */
+/*  */
+          /* custom icon for checkbox checked state */
+          /* input[type="radio"]:checked + label { */
+            /* padding: 3px; */
+            /* background: url("checked.png") no-repeat left center; */
+            /* padding-left: 30px; */
+            /* color: white; */
+          /* } */
+
+
+          label.email {
+          }
+          
+          label.phone {
+            /*  margin-left: 15%;
+            padding-bottom: 20px; */
+margin-left:15%;
+          }
+          
+          .form-control.contact-method  > label {
+              display: inline-flex;
+          }
+
+          /* Reset default styles */
+          input[type="radio"] {
+              display: none; /* Hide the default radio button */
+          }
+
+          /* Custom square radio button style */
+          .custom-radio {
+              display: inline-flex;
+              width: 25px;
+              height: 25px;
+              background-color: rgba(0,0,0,0);
+              border: 2px solid #fff;
+              border-radius: 0px;
+              position: relative;
+          }
+
+          /* Styling for checked state */
+          input[type="radio"]:checked + .custom-radio::after {
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 11px;
+              height: 11px;
+              background-color: var(--color-brand);
+              border-radius: 0px; /* Adjust border radius to match parent */
+          }
+
+/* Optional styling for label text */
+.label-text {
+    margin-left: 10px;
+    font-size: 16px;
+  color: #fff;
+}
+          
+          .form-control {
+            margin-top:15px;
+          }
+          .form-control label{
+            color: white;
+          }
+
 
 
 
